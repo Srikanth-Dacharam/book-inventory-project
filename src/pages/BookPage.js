@@ -7,6 +7,7 @@ import { Homepage } from "../pages/HomePage";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import Header from "../components/Header";
 
 // import CartPage from "./CartPage";
 
@@ -61,35 +62,40 @@ function BookPage() {
   };
 
   return (
-    <div className="items-center justify max-w-7xl mx-auto mt-10 bg-opacity-10">
+    <div>
       <div>
-        <img src={image} alt="Book cover" />
+        <Header />
       </div>
+      <div className="items-center justify max-w-7xl mx-auto mt-10 bg-opacity-10">
+        <div>
+          <img src={image} alt="Book cover" />
+        </div>
 
-      <div className="mt-5 p-4 rounded-md shadow-2xl ">
-        <h1>
-          <b>Title:</b>
-          {title}
-        </h1>
-        <p>
-          <b>Author(s):</b> {author}
-        </p>
-        <p>
-          <b>Genre:</b> {genre}
-        </p>
-        <p>
-          <b>Price $:</b> {amount}
-        </p>
-        <span>
-          <b>Description :</b>{" "}
-          <span dangerouslySetInnerHTML={description}></span>
-        </span>
-        <button
-          onClick={() => handleAddtocart(bookData)}
-          className="add-cart-btn m-4 bg-teal-500 rounded-md shadow-md px-4 py-2 hover:bg-blue-600"
-        >
-          Add to Cart
-        </button>
+        <div className="mt-5 p-4 rounded-md shadow-2xl ">
+          <h1>
+            <b>Title:</b>
+            {title}
+          </h1>
+          <p>
+            <b>Author(s):</b> {author}
+          </p>
+          <p>
+            <b>Genre:</b> {genre}
+          </p>
+          <p>
+            <b>Price $:</b> {amount}
+          </p>
+          <span>
+            <b>Description :</b>{" "}
+            <span dangerouslySetInnerHTML={description}></span>
+          </span>
+          <button
+            onClick={() => handleAddtocart(bookData)}
+            className="add-cart-btn m-4 bg-teal-500 rounded-md shadow-md px-4 py-2 hover:bg-blue-600"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );

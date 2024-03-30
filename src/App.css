@@ -101,6 +101,17 @@
 .cart-icon:hover{
   color: white;
   background-color: #a020f0;
+}
 
-
+@media (max-width: 768px) {
+  .cart-item-mq{
+    display: flex;
+    flex-direction: column;
+  }
+  .cart-item-mq div{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+  }
 }

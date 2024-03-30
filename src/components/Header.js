@@ -32,7 +32,7 @@ export default function Header() {
         <div>
           <ul className="flex items-center gap-4 ">
             <li>
-              <Link to="/home">
+              <Link to="/HomePage">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

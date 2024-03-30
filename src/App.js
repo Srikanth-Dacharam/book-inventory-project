@@ -13,10 +13,10 @@ function App() {
   return (
     <div>
       <Toaster />
-      <Header />
       <Routes>
         <Route index element={<Login />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="HomePage" element={<HomePage />} />
+        <Route path="Header" element={<Header />} />
 
         <Route path="book/:id" element={<BookPage />} />
         <Route path="CartPage" element={<CartPage />} />
