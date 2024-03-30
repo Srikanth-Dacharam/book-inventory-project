@@ -3,17 +3,18 @@ import { Link } from "react-router-dom";
 // import { CartPage } from "./pages/CartPage";
 
 export default function Header() {
+  const loggedIn = sessionStorage.getItem("loggedIn");
   return (
     <div className="header-wrapper">
       <header className="flex justify-between items-center px-8 py-4">
-        <div>
+        <div className="flex gap-10">
           <h3 className="">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokewidth="1.5"
-              stroke="currentColor"
+              stroke="#a020f0"
               className="w-10 h-10"
             >
               <path
@@ -23,21 +24,31 @@ export default function Header() {
               />
             </svg>
           </h3>
+          <div className="logo-title mt-2">
+            <span className="">BOOK</span>&nbsp;
+            <span className="">INVENTORY</span>
+          </div>
         </div>
         <div>
           <ul className="flex items-center gap-4 ">
-            <Link to="/">
-              <li className="hover:bg-green-500 rounded-md p-0.5 ">
+            <li>
+              <Link to="/home">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 -960 960 960"
-                  width="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#a020f0"
+                  class="cart-icon w-10 h-10 p-2 hover:stroke-white rounded-lg"
                 >
-                  <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                  />
                 </svg>
-              </li>
-            </Link>
+              </Link>
+            </li>
             <li>
               <Link to="/CartPage">
                 <svg
@@ -45,8 +56,8 @@ export default function Header() {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
+                  stroke="#a020f0"
+                  class="cart-icon w-10 h-10 p-2 hover:stroke-white rounded-lg"
                 >
                   <path
                     stroke-linecap="round"

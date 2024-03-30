@@ -61,12 +61,12 @@ function BookPage() {
   };
 
   return (
-    <div className="items-center  justify max-w-7xl mx-auto mt-10 bg-blue-100 ">
-      <div className="bg-orange-100 w-">
-        <img src={image} alt="Book cover" className="max-w-auto" />
+    <div className="items-center justify max-w-7xl mx-auto mt-10 bg-opacity-10">
+      <div>
+        <img src={image} alt="Book cover" />
       </div>
 
-      <div className="mt-5 rounded-md shadow-2xl bg-teal-100">
+      <div className="mt-5 p-4 rounded-md shadow-2xl ">
         <h1>
           <b>Title:</b>
           {title}
@@ -84,13 +84,13 @@ function BookPage() {
           <b>Description :</b>{" "}
           <span dangerouslySetInnerHTML={description}></span>
         </span>
+        <button
+          onClick={() => handleAddtocart(bookData)}
+          className="add-cart-btn m-4 bg-teal-500 rounded-md shadow-md px-4 py-2 hover:bg-blue-600"
+        >
+          Add to Cart
+        </button>
       </div>
-      <button
-        onClick={() => handleAddtocart(bookData)}
-        className="mt-10 bg-teal-500 rounded-md shadow-md px-4 py-2 hover:bg-blue-600"
-      >
-        Add to Cart
-      </button>
     </div>
   );
 }

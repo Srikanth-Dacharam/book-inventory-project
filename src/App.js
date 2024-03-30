@@ -7,6 +7,7 @@ import BookPage from "./pages/BookPage";
 import CartPage from "./pages/CartPage";
 import { Toaster } from "react-hot-toast";
 import CheckoutForm from "./pages/CheckoutForm";
+import { Login } from "./pages/Login";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <Toaster />
       <Header />
       <Routes>
-        <Route index element={<HomePage />} />
+        <Route index element={<Login />} />
+        <Route path="/home" element={<HomePage />} />
 
         <Route path="book/:id" element={<BookPage />} />
         <Route path="CartPage" element={<CartPage />} />

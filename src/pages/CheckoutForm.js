@@ -83,6 +83,8 @@ const CheckoutForm = () => {
             Card Number
           </label>
           <input
+            min="1"
+            max="10000000000000000000"
             type="number"
             id="cardNumber"
             name="cardNumber"

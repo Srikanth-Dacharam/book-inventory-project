@@ -7612,54 +7612,51 @@ export default function HomePage() {
             setSearchTerm(e.target.value);
           }}
           value={searchTerm}
-          className="search-input w-full px-4 py-2"
+          className="search-input w-full px-4 py-2 mx-2"
         />
       </div>
-      <ul className="sm:pt-5 py-16 flex gap-5 flex-wrap justify-center m-2">
+      <ul className="book-list-ul sm:pt-5 py-16 flex gap-5 flex-wrap justify-center m-2">
         {filterBooks.map((book) => (
-          <li
-            key={book.id}
-            className="card shadow-md rounded-md p-2  h-50 md:grid-cols-2 md:items-center"
-          >
-            <div>
-              <img
-                src={book.volumeInfo.imageLinks?.thumbnail}
-                alt={book.volumeInfo.title}
-                className="h-40 p-6 md:grid-cols-2 md:items-center"
-              />
-            </div>
-            <div className="cursor-pointer">
-              <Link to={`/book/${book.id}`}>
-                <div className="text-bold p-1 flex hover:bg-black hover:text-white hover:rounded-lg">
+          <li className="card shadow-md rounded-md p-2  h-50 md:grid-cols-2 md:items-center">
+            <Link to={`/book/${book.id}`} key={book.id}>
+              <div>
+                <img
+                  src={book.volumeInfo.imageLinks?.thumbnail}
+                  alt={book.volumeInfo.title}
+                  className="h-40 p-6 md:grid-cols-2 md:items-center"
+                />
+              </div>
+              <div className="cursor-pointer">
+                <div className="text-bold p-1 flex">
                   <b className="sub-heads">Title:</b>
                   <span className="card-val">{book.volumeInfo.title}</span>
                 </div>
-              </Link>
-              <div className="flex">
-                <b className="sub-heads"> Author:</b>
-                <span className="card-val">
-                  {book.volumeInfo.authors &&
-                    book.volumeInfo.authors.join(", ")}
-                </span>
-              </div>
-              <p className="flex">
-                <b className="sub-heads"> Genre:</b>{" "}
-                <span className="card-val">
-                  {book.volumeInfo.categories &&
-                    book.volumeInfo.categories.join(", ")}
-                </span>
-              </p>
-              <div className="flex">
-                <b className="sub-heads"> Price $ :</b>
-
-                {book.saleInfo && book.saleInfo.listPrice && (
+                <div className="flex">
+                  <b className="sub-heads"> Author:</b>
                   <span className="card-val">
-                    {book.saleInfo.listPrice.amount}{" "}
-                    {book.saleInfo.listPrice.currencyCode}
+                    {book.volumeInfo.authors &&
+                      book.volumeInfo.authors.join(", ")}
                   </span>
-                )}
+                </div>
+                <p className="flex">
+                  <b className="sub-heads"> Genre:</b>{" "}
+                  <span className="card-val">
+                    {book.volumeInfo.categories &&
+                      book.volumeInfo.categories.join(", ")}
+                  </span>
+                </p>
+                <div className="flex">
+                  <b className="sub-heads"> Price $ :</b>
+
+                  {book.saleInfo && book.saleInfo.listPrice && (
+                    <span className="card-val">
+                      {book.saleInfo.listPrice.amount}{" "}
+                      {book.saleInfo.listPrice.currencyCode}
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
+            </Link>
           </li>
         ))}
       </ul>

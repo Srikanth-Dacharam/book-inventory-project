@@ -37,15 +37,22 @@
   }
 }
 
-
+.border{
+  border-top: 4px solid #a020f0;
+}
 
 .header-wrapper{
   background-color: #fdfdfd;
 }
 
 .search-input{
-  border: 1px solid gray;
-  border-radius: 2px;
+  border: 2px solid gray;
+  border-radius: 6px;
+}
+
+.search-input:focus{
+  border: 2px solid #a020f0;
+  outline: #a020f0;
 }
 
 .card{
@@ -72,4 +79,28 @@
 
 .book-wrapper{
   background-color: #fb04fb0d;
+}
+
+
+.logo-title span:first-child{
+  color:#bd68f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.logo-title span:nth-child(2){
+  color:#a020f0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+
+.add-cart-btn{
+  background-color: #a020f0;
+  color: white;
+}
+
+.cart-icon:hover{
+  color: white;
+  background-color: #a020f0;
+
+
 }

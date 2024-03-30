@@ -44,10 +44,12 @@ function CartPage() {
   }, 0);
 
   return (
-    <div className="max-w-7xl mx-auto mt-10 bg-blue-100">
-      <h2 className="text-center color-black solid-black">Shoping Cart</h2>
+    <div className="max-w-7xl mx-auto mt-5">
+      <h2 className="text-center color-black solid-black text-2xl font-bold">
+        Your Book List
+      </h2>
       {selectedBook.cartItems.length === 0 ? (
-        <div className="flex justify-between  rounded-md shadow-md">
+        <div className="flex justify-between  rounded-md">
           <p className="rounded-50% shadow-md">Your cart is empty</p>
           <Link to="/">
             <span className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
@@ -56,12 +58,12 @@ function CartPage() {
           </Link>
         </div>
       ) : (
-        <div>
-          <div className="mt-5 rounded-md shadow-2xl bg-teal-100">
+        <div className="mx-10">
+          <div className="mt-5 h-[450px] mb-2 overflow-x-auto rounded-md">
             {selectedBook.cartItems.map((book) => (
-              <li
+              <div
                 key={book.id}
-                className="flex  justify-between mt-5 rounded-md shadow-2xl "
+                className="border flex p-2 justify-between items-center mt-5 shadow-md rounded-md"
               >
                 <div className="px-2">
                   <img
@@ -70,16 +72,9 @@ function CartPage() {
                     className="h-40 p-6"
                   />
                 </div>
-                <h1 className="px-2">
+                <h1 className="px-2 max-w-[15ch]">
                   <b>Title:</b> {book.volumeInfo?.title}
                 </h1>
-                <p className="px-2">
-                  <b>Author(s):</b>{" "}
-                  {book.volumeInfo?.authors
-                    ? book.volumeInfo?.authors.join(", ")
-                    : "Unknown Author"}
-                </p>
-
                 <h2 className="px-2">
                   <b> Price $ :</b>
 
@@ -91,14 +86,16 @@ function CartPage() {
                   )}
                 </h2>
                 <p className="px-2">
-                  <b>Quantity :</b>
+                  <b>Quantity : </b>
                   <button
                     onClick={() => handleDecreseCart(book)}
                     className="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-blue-600"
                   >
                     -
                   </button>
+                  &nbsp;
                   {book.cartQuantity}
+                  &nbsp;
                   <button
                     onClick={() => handleIncreaseCart(book)}
                     className="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-blue-600"
@@ -135,10 +132,10 @@ function CartPage() {
                     />
                   </svg>
                 </button>
-              </li>
+              </div>
             ))}
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between mt-8 mb-4">
             <button
               onClick={() => handleClearCart()}
               className="px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-blue-600 shadow-md "
